@@ -1,0 +1,9 @@
+name: Iqbal Hamdani
+bio: |
+  I am a software engineer with a strong passion to learn new things. Currently focused on learning in Javascript and i like a pattern.
+avatar: ./avatars/iqbal-hamdani.jpg
+social:
+  - url: https://github.com/miqbalhamdani
+  - url: https://www.instagram.com/m.iqbal.hamdani/
+  - url: https://www.linkedin.com/in/iqbalhamdani/
+featured: true
