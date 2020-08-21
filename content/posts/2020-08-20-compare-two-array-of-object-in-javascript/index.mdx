@@ -1,0 +1,73 @@
+---
+title: Compere Two Array of Object in Javascript
+author: Iqbal Hamdani
+date: 2020-08-20
+hero: ./images/venn-diagram.png
+excerpt: Membandingkan dua buah array object dan membuat array object baru berdasarkan array object yang telah dipilih oleh array pertama.
+---
+
+## Studi Kasus
+
+Misalkan anda ingin membeli 2 buah smartphone seperti di bawah di ecommerce, lalu anda masukan ke cart. Setelah sebulan anda baru ingin membayar smartphone tersebut yang sudah ada di cart sebelumnya. Sedangkan ternyata salah satu barang yang sudah ada di cart tersebut ternyata sudah tidak tersedia lagi.
+
+Bagimana cara menampilkan barang yang ada di cart anda, tetapi barang tersebut juga masih tersedia ?
+
+
+#### Barang yang anda pilih
+
+```javascript
+const selectedItems = [
+  {
+    name: 'iPhone XS',
+    brand: 'Apple',
+  },
+  {
+    name: 'Galaxy S10+',
+    brand: 'Samsung',
+  },
+];
+```
+
+#### Barang yang masih tersedia
+
+```javascript
+const listItems = [
+  {
+    name: 'iPhone XS',
+    brand: 'Apple',
+  },
+  {
+    name: 'iPhone XS Max',
+    brand: 'Apple',
+  },
+  {
+    name: 'Galaxy S20+',
+    brand: 'Samsung',
+  },
+];
+```
+
+#### Solusi
+
+```javascript
+const intersection = listItems.filter((list) => {
+  return selectedItems.some((selected) => {
+    return list.name === selected.name;
+  });
+});
+
+console.log(intersection)
+```
+
+#### Hasil
+
+```javascript
+intersection: [
+  {
+    name: 'iPhone XS',
+    brand: 'Apple'
+  }
+]
+```
+
+Data yang di tampilkan adalah item yang sudah anda masukan cart dan item tersebut masih tersedia. Barang **Galaxy S10+** tidak tampil, kerena barang tersebut sudak tidak tersedia atau tidak ada pada array **listItems**.
